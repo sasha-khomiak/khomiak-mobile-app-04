@@ -3,7 +3,7 @@
 ## ![preview](./forreadme/top-screens.png)
 
 <div align="left">
-<p>Developed for: iOS, Android</p>
+<p><b>Developed for:</b> iOS, Android</p>
 <p>Design Layout: <a href="https://www.figma.com/file/YqWLNarVE4x1zkXa6PYJfi/Homework-(Copy)-(Copy)?type=design&node-id=3-26">Figma</a></p>
 <p>Technologies: JavaScript, React, ReactNative</p>
 <p>Software: VSCode, Expo, Java Development Kit(jdk) 11, Android Studio, Xcode</p>
@@ -21,11 +21,11 @@
 
 # Screens
 
-<div>
+<div style="display: block;" align="center">
 <img align="left" src="./forreadme/1.png"  width="300" />
 <img align="left" src="./forreadme/2.png"  width="300" />
 </div>
-
+<br>
 ---
 
 # How to try
