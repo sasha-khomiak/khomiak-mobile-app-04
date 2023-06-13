@@ -21,7 +21,7 @@
 
 # Screens
 
-<div>
+<div style="display: block">
 <img align="left" src="./forreadme/1.png"  width="300" />
 <img align="left" src="./forreadme/2.png"  width="300" />
 </div>
