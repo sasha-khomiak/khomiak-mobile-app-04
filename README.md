@@ -33,11 +33,11 @@
 
 <div style="display: flex;" align="left">
 <p>1. Install VSCode</p>
-<p>2. For android simulation install <b>Java Development Kit(jdk) 11</b> and <b>Android Studio</b></p>
-<p>3. For iphone simulation install <b>Xcode</b></p>
-<p>4. For testing on real devise instal on phone <b>Expo Go</b></p>
-<p>5. Open project on VSCode and enter in terminal <b>npx expo start</b></p>
+<p>2. For Android simulation install <b>Java Development Kit(jdk) 11</b> and <b>Android Studio</b></p>
+<p>3. For Iphone simulation install <b>Xcode</b></p>
+<p>4. For testing on real devise install on phone <b>Expo Go</b></p>
+<p>5. Open the project on VSCode and enter in terminal <b>npx expo start</b></p>
 <p>6. For testing on real devise scan QR-code</p>
-<p>7. For testing on android simulator enter in terminal <b>a</b></p>
-<p>8. For testing on iphone simulator enter in terminal <b>i</b></p>
+<p>7. For testing on Android simulator, enter in terminal <b>a</b></p>
+<p>8. For testing on Iphone simulator, enter in terminal <b>i</b></p>
 </div>
