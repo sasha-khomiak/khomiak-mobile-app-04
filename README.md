@@ -14,14 +14,14 @@
 # Functionality
 
 <div align="left">
-<p>Log-in and Registration screens. Controlled inputs. Focused and unfocused inputs. Submitting form. Browsing between screens. Using localstate for saving data from inputs. Styling components.</p>
+<p>Log-in and Registration screens. Controlled inputs. Focused and unfocused inputs. Submitting form. Browsing between screens. Using localstate for saving data from inputs. Styled components.</p>
 </div>
 
 ---
 
 # Screens
 
-<div style="display: flex;" align="center">
+<div style="display: flex;" align="center" width="100%">
 <img align="left" src="./forreadme/1.png"  width="300" />
 <img align="left" src="./forreadme/2.png"  width="300" />
 </div>
