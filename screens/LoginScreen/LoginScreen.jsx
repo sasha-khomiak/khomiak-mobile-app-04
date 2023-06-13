@@ -12,6 +12,7 @@ import {
   Alert,
   TextInput,
   Pressable,
+  Platform,
 } from "react-native";
 
 import { useNavigation } from "@react-navigation/native";

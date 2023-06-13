@@ -16,6 +16,7 @@ import {
   Keyboard,
   Alert,
   Image,
+  Platform,
 } from "react-native";
 
 import { useNavigation } from "@react-navigation/native";

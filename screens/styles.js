@@ -48,7 +48,7 @@ export const styles = StyleSheet.create({
   title: {
     fontFamily: "Roboto-Medium",
     fontStyle: "normal",
-    fontWeight: 500,
+    fontWeight: "500",
     fontSize: 30,
     lineHeight: 35,
     textAlign: "center",
@@ -78,7 +78,7 @@ export const styles = StyleSheet.create({
 
     fontFamily: "Roboto-Regular",
     fontStyle: "normal",
-    fontWeight: 400,
+    fontWeight: "400",
     fontSize: 16,
     lineHeight: 19,
     color: "#212121",
@@ -101,7 +101,7 @@ export const styles = StyleSheet.create({
   showPassword: {
     fontFamily: "Roboto-Regular",
     fontStyle: "normal",
-    fontWeight: 400,
+    fontWeight: "400",
     fontSize: 16,
     lineHeight: 19,
     color: "#1B4371",
@@ -123,7 +123,7 @@ export const styles = StyleSheet.create({
   buttonText: {
     fontFamily: "Roboto-Regular",
     fontStyle: "normal",
-    fontWeight: 400,
+    fontWeight: "400",
     fontSize: 16,
     lineHeight: 19,
     color: "#FFFFFF",
@@ -138,7 +138,7 @@ export const styles = StyleSheet.create({
   linkText: {
     fontFamily: "Roboto-Regular",
     fontStyle: "normal",
-    fontWeight: 400,
+    fontWeight: "400",
     fontSize: 16,
     lineHeight: 19,
     color: "#1B4371",

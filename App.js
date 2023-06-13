@@ -2,6 +2,8 @@
 // треба встановити npx expo install expo-font
 import { useFonts } from "expo-font";
 
+import { Button } from "react-native";
+
 // Підключення бібліотеки роботи з навігацією
 import { NavigationContainer } from "@react-navigation/native";
 import "react-native-gesture-handler";
@@ -34,8 +36,20 @@ export default function App() {
     <NavigationContainer>
       <MainStack.Navigator initialRouteName="Registration">
         {/* Аналог Routes */}
-        <MainStack.Screen name="Registration" component={RegistrationScreen} />
-        <MainStack.Screen name="Login" component={LoginScreen} />
+        <MainStack.Screen
+          name="Registration"
+          component={RegistrationScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <MainStack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
       </MainStack.Navigator>
     </NavigationContainer>
   );
