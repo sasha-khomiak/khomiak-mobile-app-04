@@ -21,13 +21,15 @@
 
 # Screens
 
+<div>
 <img align="left" src="./forreadme/1.png"  width="300" />
 <img align="left" src="./forreadme/2.png"  width="300" />
+</div>
 
 ---
 
 # How to try
 
 <div align="left">
-<p></p>
+<p>1. Install VSCode</p>
 </div>
