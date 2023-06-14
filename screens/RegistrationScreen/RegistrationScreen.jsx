@@ -51,9 +51,10 @@ const RegistrationScreen = () => {
     setLogin("");
     setEmail("");
     setPassword("");
-    Alert.alert(
-      `Your login: ${login}, Your email: ${email}, Your password: ${password}`
-    );
+    // Alert.alert(
+    //   `Your login: ${login}, Your email: ${email}, Your password: ${password}`
+    // );
+    navigation.navigate("Home", { login, email, password });
   };
 
   //---------ОБРОБНИК ПОКАЗУ ПАРОЛЯ---------//
@@ -80,7 +81,7 @@ const RegistrationScreen = () => {
             style={styles.container}
           >
             {/* Наша форма біла */}
-            <View style={styles.formAreaBlock}>
+            <ScrollView contentContainerStyle={styles.formAreaBlock}>
               {/* Наша аватарка в обгортці і плюсик */}
               <View>
                 <View style={styles.avatarContainer}>
@@ -157,7 +158,7 @@ const RegistrationScreen = () => {
               >
                 <Text style={styles.linkText}>Вже є акаунт? Увійти</Text>
               </Pressable>
-            </View>
+            </ScrollView>
           </KeyboardAvoidingView>
         </TouchableWithoutFeedback>
       </ImageBackground>

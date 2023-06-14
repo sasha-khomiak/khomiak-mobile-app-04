@@ -160,4 +160,85 @@ export const styles = StyleSheet.create({
   underline: {
     textDecorationLine: "underline",
   },
+  //--------- СТИЛІ КОМПОНЕНТА POSTSSCREEN---------//
+
+  screenHeader: {
+    marginTop: 44,
+    height: 44,
+    flexDirection: "row",
+    // borderBottomWidth: 1,
+    // width: "100%",
+  },
+  screenHeaderLeft: {
+    backgroundColor: "violet",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "15%",
+  },
+  screenHeaderCenter: {
+    // backgroundColor: "yellow",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "70%",
+  },
+  screenHeaderRight: {
+    backgroundColor: "orange",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "15%",
+  },
+
+  screenHeaderText: {
+    fontFamily: "Roboto-Medium",
+    fontStyle: "normal",
+    fontWeight: "500",
+    fontSize: 17,
+    lineHeight: 22,
+    letterSpacing: -0.408,
+    color: "#212121",
+  },
+  screenMainContent: {
+    // backgroundColor: "red",
+    marginBottom: 0,
+    paddingLeft: 16,
+    paddingRight: 16,
+    paddingTop: 32,
+  },
+
+  userBlock: {
+    // backgroundColor: "yellow",
+    height: 60,
+    flexDirection: "row",
+    marginBottom: 16,
+  },
+
+  userBlockPhotoWrap: {
+    borderRadius: 16,
+    overflow: "hidden",
+  },
+
+  userBlockInfo: {
+    paddingLeft: 8,
+    justifyContent: "center",
+  },
+
+  userBlockName: {
+    fontFamily: "Roboto-Bold",
+    fontStyle: "normal",
+    fontWeight: "700",
+    fontSize: 13,
+    lineHeight: 15,
+    lineHeight: 15,
+    color: "#212121",
+  },
+
+  userBlockEmail: {
+    fontFamily: "Roboto-Regular",
+    fontStyle: "normal",
+    fontWeight: "400",
+    fontSize: 11,
+    lineHeight: 13,
+    lineHeight: 13,
+    color: "rgba(33, 33, 33, 0.8)",
+  },
 });

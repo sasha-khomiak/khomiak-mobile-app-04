@@ -49,7 +49,8 @@ const LoginScreen = () => {
     console.log("Password: ", password);
     setEmail("");
     setPassword("");
-    Alert.alert(`Your email: ${email}, Your password: ${password}`);
+    // Alert.alert(`Your email: ${email}, Your password: ${password}`);
+    navigation.navigate("Home");
   };
 
   //---------РОЗМІТКА КОМПОНЕНТА---------//

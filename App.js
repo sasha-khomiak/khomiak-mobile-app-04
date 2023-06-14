@@ -2,8 +2,6 @@
 // треба встановити npx expo install expo-font
 import { useFonts } from "expo-font";
 
-import { Button } from "react-native";
-
 // Підключення бібліотеки роботи з навігацією
 import { NavigationContainer } from "@react-navigation/native";
 import "react-native-gesture-handler";
@@ -11,9 +9,11 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 const MainStack = createStackNavigator(); // вказує на групу навігаторів
 
-// Підключення компонента RegistrationScreen
+// Підключення компонентів
 import RegistrationScreen from "./screens/RegistrationScreen/RegistrationScreen";
 import LoginScreen from "./screens/LoginScreen/LoginScreen";
+import Home from "./screens/Home/Home";
+import PostsScreen from "./screens/PostsScreen/PostsScreen";
 
 // Наш головний компонент - пограма
 export default function App() {
@@ -46,6 +46,13 @@ export default function App() {
         <MainStack.Screen
           name="Login"
           component={LoginScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <MainStack.Screen
+          name="Home"
+          component={Home}
           options={{
             headerShown: false,
           }}
