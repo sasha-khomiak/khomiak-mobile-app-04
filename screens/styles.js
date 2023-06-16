@@ -176,7 +176,6 @@ export const styles = StyleSheet.create({
     width: "15%",
   },
   screenHeaderCenter: {
-    // backgroundColor: "yellow",
     alignItems: "center",
     justifyContent: "center",
     width: "70%",
@@ -198,7 +197,6 @@ export const styles = StyleSheet.create({
     color: "#212121",
   },
   screenMainContent: {
-    // backgroundColor: "red",
     marginBottom: 0,
     paddingLeft: 16,
     paddingRight: 16,
@@ -206,7 +204,6 @@ export const styles = StyleSheet.create({
   },
 
   userBlock: {
-    // backgroundColor: "yellow",
     height: 60,
     flexDirection: "row",
     marginBottom: 16,
