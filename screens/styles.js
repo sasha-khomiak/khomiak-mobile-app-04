@@ -166,11 +166,12 @@ export const styles = StyleSheet.create({
     marginTop: 44,
     height: 44,
     flexDirection: "row",
-    // borderBottomWidth: 1,
+    borderBottomWidth: 1,
+    borderColor: "#BDBDBD",
     // width: "100%",
   },
   screenHeaderLeft: {
-    backgroundColor: "violet",
+    // backgroundColor: "violet",
     alignItems: "center",
     justifyContent: "center",
     width: "15%",
@@ -181,7 +182,7 @@ export const styles = StyleSheet.create({
     width: "70%",
   },
   screenHeaderRight: {
-    backgroundColor: "orange",
+    // backgroundColor: "orange",
     alignItems: "center",
     justifyContent: "center",
     width: "15%",
