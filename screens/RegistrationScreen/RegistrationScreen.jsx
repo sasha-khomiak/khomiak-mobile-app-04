@@ -21,9 +21,11 @@ import {
 
 import { useNavigation } from "@react-navigation/native";
 
-// Імпорт фотографії бекграунду і іконки плюсика
+// Імпорт фотографії бекграунду
 import PhotoBG from "../../assets/images/PhotoBG.jpg";
-import AddIco from "../../assets/images/add.png";
+
+// Імпорт іконки плюсика
+import { AntDesign } from "@expo/vector-icons";
 
 // Імпорт стилів
 import { styles } from "../styles";
@@ -85,7 +87,12 @@ const RegistrationScreen = () => {
               {/* Наша аватарка в обгортці і плюсик */}
               <View>
                 <View style={styles.avatarContainer}>
-                  <Image source={AddIco} style={styles.addIco} />
+                  <AntDesign
+                    name="pluscircleo"
+                    size={25}
+                    color="#FF6C00"
+                    style={styles.addIco}
+                  />
                 </View>
               </View>
 

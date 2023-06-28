@@ -36,8 +36,6 @@ export const styles = StyleSheet.create({
   //
   // Стиль іконки плюсика
   addIco: {
-    width: 25,
-    height: 25,
     zIndex: 100,
     position: "absolute",
     right: -12.5,

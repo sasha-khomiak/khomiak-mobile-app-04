@@ -19,7 +19,6 @@ import { useNavigation } from "@react-navigation/native";
 
 // Імпорт фотографії бекграунду і іконки плюсика
 import PhotoBG from "../../assets/images/PhotoBG.jpg";
-import AddIco from "../../assets/images/add.png";
 
 // Імпорт стилів
 import { styles } from "../styles";

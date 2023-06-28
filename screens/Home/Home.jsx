@@ -6,16 +6,17 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 // import Ionicons from "react-native-ionicons";
 
 // Імпорт стилів
-// import { styles } from "../styles";
+import { styles } from "../styles";
 
-// import RegistrationScreen from "./screens/RegistrationScreen/RegistrationScreen";
-// import LoginScreen from "./screens/LoginScreen/LoginScreen";
 import PostsScreen from "../PostsScreen/PostsScreen";
+import ProfileScreen from "../ProfileScreen/ProfileScreen";
 
-function Profile() {
+import { Ionicons } from "@expo/vector-icons";
+
+function Center() {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Profile!</Text>
+      <Text>Center!</Text>
     </View>
   );
 }
@@ -28,25 +29,26 @@ const Home = () => {
   return (
     //  отут нижня навігація
     <Tabs.Navigator
-    // screenOptions={({ route }) => ({
-    //   tabBarIcon: ({ focused, color, size }) => {
-    //     let iconName;
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          // назва іконки
+          let iconName;
 
-    //     if (route.name === "Profile") {
-    //       iconName = focused
-    //         ? "ios-information-circle"
-    //         : "ios-information-circle-outline";
-    //     } else if (route.name === "Settings") {
-    //       iconName = focused ? "ios-list-box" : "ios-list";
-    //     }
-    //     return <Ionicons name={add-circle-outline} size={size} color={color} />;
-    //   },
-
-    // })}
-    // tabBarOptions={{
-    //   activeTintColor: "tomato",
-    //   inactiveTintColor: "gray",
-    // }}
+          // зображення іконки в залежності імені роута і його фокусу
+          if (route.name === "PostsScreen") {
+            iconName = focused ? "ios-information-circle" : "person-outline";
+          } else if (route.name === "Center") {
+            iconName = focused ? "person-outline" : "ios-list";
+          } else if (route.name === "Profile") {
+            iconName = focused ? "person-outline" : "ios-list";
+          }
+          return <Ionicons name={iconName} size={size} color={color} />;
+        },
+        tabBarActiveTintColor: "tomato",
+        tabBarInactiveTintColor: "gray",
+        headerShown: false,
+        tabBarShowLabel: false,
+      })}
     >
       <Tabs.Screen
         name="PostsScreen"
@@ -55,7 +57,20 @@ const Home = () => {
           headerShown: false,
         }}
       />
-      <Tabs.Screen name="Profile" component={Profile} />
+      <Tabs.Screen
+        name="Center"
+        component={Center}
+        // options={{
+        //   headerShown: false,
+        // }}
+      />
+      <Tabs.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Tabs.Navigator>
   );
 };
