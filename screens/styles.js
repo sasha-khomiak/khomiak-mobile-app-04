@@ -260,4 +260,40 @@ export const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
   },
+  logOutButton: {
+    position: "absolute",
+    right: 16,
+    top: 22,
+  },
+  profileName: {
+    fontFamily: "Roboto-Medium",
+    fontStyle: "normal",
+    fontWeight: "500",
+    fontSize: 30,
+    letterSpacing: 0.3,
+    color: "#212121",
+    marginTop: 2,
+  },
+  pictureCard: {
+    marginTop: 32,
+  },
+  nameOfPicture: {
+    marginTop: 8,
+    fontFamily: "Roboto-Medium",
+    fontStyle: "normal",
+    fontWeight: "500",
+    fontSize: 16,
+    color: "#212121",
+  },
+  pictureInfo: {
+    flexDirection: "row",
+    marginTop: 8,
+  },
+  pictureStatistics: {
+    fontFamily: "Roboto-Regular",
+    fontStyle: "normal",
+    fontWeight: "400",
+    fontSize: 16,
+    color: "#212121",
+  },
 });
