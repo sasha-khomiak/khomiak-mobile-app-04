@@ -5,6 +5,7 @@ import {
   ScrollView,
   Image,
   Pressable,
+  SafeAreaView,
 } from "react-native";
 
 // Імпорт стилів
@@ -25,6 +26,8 @@ import Forest from "../../assets/images/forest.jpg";
 import Sea from "../../assets/images/sea.jpg";
 import House from "../../assets/images/house.jpg";
 
+import PictureCard from "../../components/PictureCard";
+
 const ProfileScreen = () => {
   //---------СТВОРЕННЯ НАВІГАЦІЇ---------//
   const navigation = useNavigation();
@@ -36,7 +39,7 @@ const ProfileScreen = () => {
         resizeMode="cover"
         style={styles.bgimage}
       >
-        <ScrollView contentContainerStyle={styles.formAreaBlock}>
+        <ScrollView contentContainerStyle={styles.profileAreaBlock}>
           {/* Наша аватарка в обгортці і хрестик */}
           <View>
             <View style={styles.avatarContainer}>
@@ -60,23 +63,27 @@ const ProfileScreen = () => {
           </Pressable>
           <Text style={styles.profileName}>Natali Romanova</Text>
 
-          <View style={styles.pictureCard}>
-            <Image source={Forest}></Image>
-            <Text style={styles.nameOfPicture}>Ліс</Text>
-
-            <View style={styles.pictureInfo}>
-              <MaterialCommunityIcons
-                name="message-reply"
-                size={24}
-                color="#FF6C00"
-              />
-              <Text style={styles.pictureStatistics}>8</Text>
-              <AntDesign name="like2" size={24} color="#FF6C00" />
-              <Text style={styles.pictureStatistics}>200</Text>
-              <AntDesign name="enviromento" size={24} color="#BDBDBD" />
-              <Text>Ukraine</Text>
-            </View>
-          </View>
+          <PictureCard
+            pictureSource={Forest}
+            title="Ліс"
+            comments="8"
+            likes="153"
+            location="Ukraine"
+          />
+          <PictureCard
+            pictureSource={Sea}
+            title="Захід на Чорному морі"
+            comments="3"
+            likes="200"
+            location="Ukraine"
+          />
+          <PictureCard
+            pictureSource={House}
+            title="Старий будиночок у Венеції"
+            comments="5"
+            likes="200"
+            location="Italy"
+          />
         </ScrollView>
       </ImageBackground>
     </View>

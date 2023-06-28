@@ -10,8 +10,11 @@ import { styles } from "../styles";
 
 import PostsScreen from "../PostsScreen/PostsScreen";
 import ProfileScreen from "../ProfileScreen/ProfileScreen";
+import CreatePostsScreen from "../CreatePostsScreen/CreatePostsScreen";
 
 import { Ionicons } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
+import { Octicons } from "@expo/vector-icons";
 
 function Center() {
   return (
@@ -29,46 +32,59 @@ const Home = () => {
   return (
     //  отут нижня навігація
     <Tabs.Navigator
-      screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
-          // назва іконки
-          let iconName;
-
-          // зображення іконки в залежності імені роута і його фокусу
-          if (route.name === "PostsScreen") {
-            iconName = focused ? "ios-information-circle" : "person-outline";
-          } else if (route.name === "Center") {
-            iconName = focused ? "person-outline" : "ios-list";
-          } else if (route.name === "Profile") {
-            iconName = focused ? "person-outline" : "ios-list";
-          }
-          return <Ionicons name={iconName} size={size} color={color} />;
-        },
-        tabBarActiveTintColor: "tomato",
-        tabBarInactiveTintColor: "gray",
+      screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
-      })}
+        tabBarStyle: {
+          paddingBottom: 20,
+          height: 83,
+        },
+      }}
     >
       <Tabs.Screen
         name="PostsScreen"
         component={PostsScreen}
         options={{
-          headerShown: false,
+          tabBarActiveTintColor: "#FF6C00",
+          tabBarInactiveTintColor: "#212121",
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName = focused ? "appstore-o" : "appstore-o";
+            return <AntDesign name={iconName} color={color} size={size} />;
+          },
         }}
       />
       <Tabs.Screen
-        name="Center"
-        component={Center}
-        // options={{
-        //   headerShown: false,
-        // }}
+        name="CreatePostsScreen"
+        component={CreatePostsScreen}
+        options={{
+          // tabBarActiveTintColor: "#FF6C00",
+          // tabBarInactiveTintColor: "#212121",
+          tabBarIcon: ({ color, size }) => (
+            <View
+              style={{
+                backgroundColor: "#FF6C00",
+                borderRadius: 20,
+                height: 40,
+                width: 70,
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Octicons name="plus" color={color} size={size} />
+            </View>
+          ),
+        }}
       />
       <Tabs.Screen
-        name="Profile"
+        name="ProfileScreen"
         component={ProfileScreen}
         options={{
-          headerShown: false,
+          tabBarActiveTintColor: "#FF6C00",
+          tabBarInactiveTintColor: "#212121",
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName = focused ? "person" : "person-outline";
+            return <Ionicons name={iconName} color={color} size={size} />;
+          },
         }}
       />
     </Tabs.Navigator>

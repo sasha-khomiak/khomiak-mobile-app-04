@@ -250,15 +250,17 @@ export const styles = StyleSheet.create({
   //--------- СТИЛІ КОМПОНЕНТА PROFILESCREEN---------//
   //
   // Стиль нашого блока білої обгортки на сторінці юзера
-  authAreaBlock: {
+  profileAreaBlock: {
     paddingTop: 32,
-    height: 489,
+    // height: 489,
     // marginBottom: 0,
-    marginTop: "auto",
+    // marginTop: "auto",
+    marginTop: 147,
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     backgroundColor: "#fff",
     alignItems: "center",
+    paddingBottom: 192,
   },
   logOutButton: {
     position: "absolute",
@@ -276,6 +278,10 @@ export const styles = StyleSheet.create({
   },
   pictureCard: {
     marginTop: 32,
+  },
+  pictureWrap: {
+    borderRadius: 8,
+    overflow: "hidden",
   },
   nameOfPicture: {
     marginTop: 8,
@@ -295,5 +301,16 @@ export const styles = StyleSheet.create({
     fontWeight: "400",
     fontSize: 16,
     color: "#212121",
+  },
+  pictureComments: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginRight: 24,
+  },
+  pictureLikes: { flexDirection: "row", alignItems: "center" },
+  pictureLocation: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginLeft: "auto",
   },
 });
