@@ -87,6 +87,7 @@ const RegistrationScreen = () => {
               {/* Наша аватарка в обгортці і плюсик */}
               <View>
                 <View style={styles.avatarContainer}>
+                  <View style={styles.avatarPhotoWrap}></View>
                   <AntDesign
                     name="pluscircleo"
                     size={25}

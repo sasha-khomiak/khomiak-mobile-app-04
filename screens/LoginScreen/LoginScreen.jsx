@@ -13,6 +13,7 @@ import {
   TextInput,
   Pressable,
   Platform,
+  ScrollView,
 } from "react-native";
 
 import { useNavigation } from "@react-navigation/native";
@@ -69,7 +70,7 @@ const LoginScreen = () => {
             style={styles.container}
           >
             {/* Наша форма біла */}
-            <View style={styles.authAreaBlock}>
+            <ScrollView contentContainerStyle={styles.authAreaBlock}>
               {/* Наш заголовок */}
               <Text style={styles.title}>Увійти</Text>
 
@@ -130,7 +131,7 @@ const LoginScreen = () => {
                   <Text style={styles.underline}>Зареєструватися</Text>
                 </Text>
               </Pressable>
-            </View>
+            </ScrollView>
           </KeyboardAvoidingView>
         </TouchableWithoutFeedback>
       </ImageBackground>

@@ -15,7 +15,6 @@ export const styles = StyleSheet.create({
   // Стиль нашого блока білої форми
   formAreaBlock: {
     height: 549,
-    // marginBottom: 0,
     marginTop: "auto",
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
@@ -23,7 +22,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   //
-  // Стиль контейнера нашого аватара
+  // Стиль контейнера нашого аватара на скріні реєстрації
   avatarContainer: {
     width: 120,
     height: 120,
@@ -34,15 +33,23 @@ export const styles = StyleSheet.create({
     marginBottom: -28,
   },
   //
-  // Стиль іконки плюсика
+  //обгортка фотки аватару для приховування скруглених кутів
+  avatarPhotoWrap: {
+    borderRadius: 16,
+    overflow: "hidden",
+  },
+  // Стиль іконки плюсика (позиціонування)
   addIco: {
     zIndex: 100,
     position: "absolute",
     right: -12.5,
     bottom: 14,
+    backgroundColor: "white",
+    borderRadius: 12.5,
+    overflow: "hidden",
   },
   //
-  // Стиль нашого заголовок
+  // Стиль нашого заголовок реєстрація і логін
   title: {
     fontFamily: "Roboto-Medium",
     fontStyle: "normal",
@@ -73,7 +80,6 @@ export const styles = StyleSheet.create({
     padding: 16,
     // position: "relative",
     // marginHorizontal: 16,
-
     fontFamily: "Roboto-Regular",
     fontStyle: "normal",
     fontWeight: "400",
@@ -82,15 +88,16 @@ export const styles = StyleSheet.create({
     color: "#212121",
     // underlineColor: "transparent",
   },
+  //
+  // стиль інпута змінюється колір, коли він у фокусі
   focusedInput: {
     borderColor: "#FF6C00",
   },
   //
-  // Стиль поля натискання "показати пароль"
+  // Стиль поля натискання "показати пароль" (позиціонування)
   pressableShowPassword: {
     position: "absolute",
     right: 16,
-    // bottom: 0,
     top: "50%",
     transform: [{ translateY: -8 }],
   },
@@ -105,7 +112,7 @@ export const styles = StyleSheet.create({
     color: "#1B4371",
   },
   //
-  //  Стиль кнопки "Зареєструватися"
+  //  Стиль кнопки "Зареєструватися" і "Залогінитись"
   button: {
     borderRadius: 100,
     backgroundColor: "#FF6C00",
@@ -117,7 +124,7 @@ export const styles = StyleSheet.create({
     //   marginBottom: 16,
   },
   //
-  //  Стиль тексту кнопки "Зареєструватися"
+  //  Стиль тексту кнопки "Зареєструватися" і "Залогінитись"
   buttonText: {
     fontFamily: "Roboto-Regular",
     fontStyle: "normal",
@@ -127,12 +134,12 @@ export const styles = StyleSheet.create({
     color: "#FFFFFF",
   },
   //
-  //  Стиль клікабельної частини лінку "вже зареєстрований"
+  //  Стиль клікабельної частини лінку "вже зареєстрований" або "зареєструватися"
   linkTextWrap: {
     marginTop: 16,
   },
   //
-  //  Стиль тексту лінку "вже зареєстрований"
+  //  Стиль тексту лінку "вже зареєстрований" або "зареєструватися"
   linkText: {
     fontFamily: "Roboto-Regular",
     fontStyle: "normal",
@@ -142,7 +149,7 @@ export const styles = StyleSheet.create({
     color: "#1B4371",
   },
 
-  //--------- СТИЛІ КОМПОНЕНТА ЗАЛОГІНЕННЯ---------//
+  //--------- ДОДАТКОВІ СТИЛІ КОМПОНЕНТА ЗАЛОГІНЕННЯ---------//
   //
   // Стиль нашого блока білої обгортки автинтефікації
   authAreaBlock: {
@@ -155,6 +162,8 @@ export const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
   },
+  //
+  //додаткова стилізація підкреслення в посиланні
   underline: {
     textDecorationLine: "underline",
   },
@@ -236,5 +245,19 @@ export const styles = StyleSheet.create({
     lineHeight: 13,
     lineHeight: 13,
     color: "rgba(33, 33, 33, 0.8)",
+  },
+
+  //--------- СТИЛІ КОМПОНЕНТА PROFILESCREEN---------//
+  //
+  // Стиль нашого блока білої обгортки на сторінці юзера
+  authAreaBlock: {
+    paddingTop: 32,
+    height: 489,
+    // marginBottom: 0,
+    marginTop: "auto",
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
+    backgroundColor: "#fff",
+    alignItems: "center",
   },
 });

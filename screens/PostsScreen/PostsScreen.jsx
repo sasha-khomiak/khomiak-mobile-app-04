@@ -34,16 +34,6 @@ const PostsScreen = () => {
             <Text style={styles.userBlockEmail}>email@example.com</Text>
           </View>
         </View>
-
-        <View style={styles.userBlock}>
-          <View style={styles.userBlockPhotoWrap}>
-            <Image source={RomanovaImg} />
-          </View>
-          <View style={styles.userBlockInfo}>
-            <Text style={styles.userBlockName}>Natali Romanova</Text>
-            <Text style={styles.userBlockEmail}>email@example.com</Text>
-          </View>
-        </View>
       </ScrollView>
     </View>
   );
