@@ -47,9 +47,9 @@ const RegistrationScreen = () => {
 
   //---------ОБРОБНИК "САБМІТУ" ФОРМИ---------//
   const registration = () => {
-    console.log("Login: ", login);
-    console.log("Email: ", email);
-    console.log("Password: ", password);
+    // console.log("Login: ", login);
+    // console.log("Email: ", email);
+    // console.log("Password: ", password);
     setLogin("");
     setEmail("");
     setPassword("");
@@ -63,7 +63,7 @@ const RegistrationScreen = () => {
   const [hidePassword, setHidePassword] = useState(true);
   const togglePassword = () => {
     setHidePassword((prevState) => !prevState);
-    console.log("hidePassword", hidePassword);
+    // console.log("hidePassword", hidePassword);
   };
 
   //---------РОЗМІТКА КОМПОНЕНТА---------//

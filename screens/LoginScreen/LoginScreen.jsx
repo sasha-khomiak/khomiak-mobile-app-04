@@ -45,8 +45,8 @@ const LoginScreen = () => {
 
   //---------ОБРОБНИК "САБМІТУ" ФОРМИ---------//
   const login = () => {
-    console.log("Email: ", email);
-    console.log("Password: ", password);
+    // console.log("Email: ", email);
+    // console.log("Password: ", password);
     setEmail("");
     setPassword("");
     // Alert.alert(`Your email: ${email}, Your password: ${password}`);

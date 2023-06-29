@@ -18,7 +18,7 @@ import { styles } from "../screens/styles";
 
 const PictureCard = ({ pictureSource, title, comments, likes, location }) => {
   const navigation = useNavigation();
-  console.log("navigation", navigation);
+  // console.log("navigation", navigation);
   return (
     <View style={styles.pictureCard}>
       <View style={styles.pictureWrap}>
