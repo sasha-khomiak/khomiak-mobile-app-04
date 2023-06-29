@@ -14,6 +14,7 @@ import RegistrationScreen from "./screens/RegistrationScreen/RegistrationScreen"
 import LoginScreen from "./screens/LoginScreen/LoginScreen";
 import Home from "./screens/Home/Home";
 import PostsScreen from "./screens/PostsScreen/PostsScreen";
+import CommentsScreen from "./screens/CommentsScreen/CommentsScreen";
 
 // Наш головний компонент - пограма
 export default function App() {
@@ -34,7 +35,7 @@ export default function App() {
     // Наш головний контейнер - тобто весь екран в навігаційній обгортці
 
     <NavigationContainer>
-      <MainStack.Navigator initialRouteName="Registration">
+      <MainStack.Navigator initialRouteName="Login">
         {/* Аналог Routes */}
         <MainStack.Screen
           name="Registration"
@@ -53,6 +54,13 @@ export default function App() {
         <MainStack.Screen
           name="Home"
           component={Home}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <MainStack.Screen
+          name="Comments"
+          component={CommentsScreen}
           options={{
             headerShown: false,
           }}

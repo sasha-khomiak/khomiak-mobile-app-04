@@ -4,6 +4,7 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 // import Icon from "react-native-ionicons";
 // import Ionicons from "react-native-ionicons";
+import { Feather } from "@expo/vector-icons";
 
 // Імпорт стилів
 import { styles } from "../styles";
@@ -15,14 +16,6 @@ import CreatePostsScreen from "../CreatePostsScreen/CreatePostsScreen";
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { Octicons } from "@expo/vector-icons";
-
-function Center() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Center!</Text>
-    </View>
-  );
-}
 
 //Створення нижньої навігації
 const Tabs = createBottomTabNavigator();
@@ -47,10 +40,9 @@ const Home = () => {
         options={{
           tabBarActiveTintColor: "#FF6C00",
           tabBarInactiveTintColor: "#212121",
-          tabBarIcon: ({ focused, color, size }) => {
-            let iconName = focused ? "appstore-o" : "appstore-o";
-            return <AntDesign name={iconName} color={color} size={size} />;
-          },
+          tabBarIcon: ({ color, size }) => (
+            <AntDesign name="appstore-o" color={color} size={size} />
+          ),
         }}
       />
       <Tabs.Screen
@@ -59,20 +51,28 @@ const Home = () => {
         options={{
           // tabBarActiveTintColor: "#FF6C00",
           // tabBarInactiveTintColor: "#212121",
-          tabBarIcon: ({ color, size }) => (
-            <View
-              style={{
-                backgroundColor: "#FF6C00",
-                borderRadius: 20,
-                height: 40,
-                width: 70,
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Octicons name="plus" color={color} size={size} />
-            </View>
-          ),
+          tabBarIcon: ({ focused, color, size }) => {
+            let icoColor = focused ? "#BDBDBD" : "#ffffff";
+            let bgColor = focused ? "#F6F6F6" : "#FF6C00";
+            return (
+              <View
+                style={{
+                  backgroundColor: bgColor,
+                  borderRadius: 20,
+                  height: 40,
+                  width: 70,
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                {focused ? (
+                  <Feather name="trash-2" color={icoColor} size={size} />
+                ) : (
+                  <Octicons name="plus" color={icoColor} size={size} />
+                )}
+              </View>
+            );
+          },
         }}
       />
       <Tabs.Screen

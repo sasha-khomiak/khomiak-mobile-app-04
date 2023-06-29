@@ -7,6 +7,8 @@ import {
   Pressable,
 } from "react-native";
 
+import { useNavigation } from "@react-navigation/native";
+
 // Імпорт бібліотек іконок
 import { AntDesign } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
@@ -15,6 +17,8 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { styles } from "../screens/styles";
 
 const PictureCard = ({ pictureSource, title, comments, likes, location }) => {
+  const navigation = useNavigation();
+  console.log("navigation", navigation);
   return (
     <View style={styles.pictureCard}>
       <View style={styles.pictureWrap}>
@@ -25,12 +29,15 @@ const PictureCard = ({ pictureSource, title, comments, likes, location }) => {
 
       <View style={styles.pictureInfo}>
         <View style={styles.pictureComments}>
-          <MaterialCommunityIcons
-            name="message-reply"
-            size={24}
-            color="#FF6C00"
-            style={{ marginRight: 6 }}
-          />
+          <Pressable onPress={() => navigation.navigate("Comments")}>
+            <MaterialCommunityIcons
+              name="message-reply"
+              size={24}
+              color="#FF6C00"
+              style={{ marginRight: 6 }}
+            />
+          </Pressable>
+
           <Text style={styles.pictureStatistics}>{comments}</Text>
         </View>
         <View style={styles.pictureLikes}>
