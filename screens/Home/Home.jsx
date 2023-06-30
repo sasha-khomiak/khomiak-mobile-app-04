@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { View, Text } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-// import Icon from "react-native-ionicons";
-// import Ionicons from "react-native-ionicons";
 import { Feather } from "@expo/vector-icons";
+import { useIsFocused } from "@react-navigation/native";
 
 // Імпорт стилів
 import { styles } from "../styles";
@@ -22,8 +21,10 @@ const Tabs = createBottomTabNavigator();
 
 // головний компонент
 const Home = () => {
-  // const [focusedNow, setFocusedNow] = useState("");
+  const [focusedNow, setFocusedNow] = useState("");
+  const navigation = useNavigation();
 
+  console.log(navigation);
   return (
     //  отут нижня навігація
     <Tabs.Navigator
@@ -39,7 +40,11 @@ const Home = () => {
           tabBarInactiveTintColor: "#212121",
           tabBarIcon: ({ focused, color, size }) => {
             if (route.name === "PostsScreen") {
-              return <AntDesign name="appstore-o" color={color} size={size} />;
+              let iconName = focused ? "appstore1" : "appstore-o";
+              let iconSize = focused ? 35 : 25;
+              return (
+                <AntDesign name={iconName} color={color} size={iconSize} />
+              );
             } else if (route.name === "CreatePostsScreen") {
               let icoColor = focused ? "#BDBDBD" : "#ffffff";
               let bgColor = focused ? "#F6F6F6" : "#FF6C00";
@@ -70,7 +75,10 @@ const Home = () => {
         };
       }}
     >
-      <Tabs.Screen name="PostsScreen" component={PostsScreen} />
+      {focusedNow !== "CreatePostsScreen" && (
+        <Tabs.Screen name="PostsScreen" component={PostsScreen} />
+      )}
+
       <Tabs.Screen name="CreatePostsScreen" component={CreatePostsScreen} />
       <Tabs.Screen name="ProfileScreen" component={ProfileScreen} />
     </Tabs.Navigator>
