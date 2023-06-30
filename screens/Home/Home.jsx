@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text } from "react-native";
+import { View, Text, AppState } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Feather } from "@expo/vector-icons";
@@ -21,10 +21,19 @@ const Tabs = createBottomTabNavigator();
 
 // головний компонент
 const Home = () => {
-  const [focusedNow, setFocusedNow] = useState("");
-  const navigation = useNavigation();
+  const [screenNumber, setScreenNumber] = useState(0);
 
-  console.log(navigation);
+  const navigation = useNavigation();
+  console.log(navigation.getState());
+
+  let actualTab = 0;
+  if (navigation.getState().routes[1].state !== undefined) {
+    actualTab = navigation.getState().routes[1].state.index;
+    // setScreenNumber(actualTab);
+    // setScreenNumber(actualTab);
+  }
+
+  console.log(actualTab);
   return (
     //  отут нижня навігація
     <Tabs.Navigator
@@ -75,10 +84,7 @@ const Home = () => {
         };
       }}
     >
-      {focusedNow !== "CreatePostsScreen" && (
-        <Tabs.Screen name="PostsScreen" component={PostsScreen} />
-      )}
-
+      <Tabs.Screen name="PostsScreen" component={PostsScreen} />
       <Tabs.Screen name="CreatePostsScreen" component={CreatePostsScreen} />
       <Tabs.Screen name="ProfileScreen" component={ProfileScreen} />
     </Tabs.Navigator>

@@ -313,4 +313,34 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     marginLeft: "auto",
   },
+
+  //--------- СТИЛІ КОМПОНЕНТА COMMENTS-SCREEN---------//
+  //
+  inputCommentWrap: {
+    width: 343,
+    height: 50,
+    marginLeft: "auto",
+    marginRight: "auto",
+  },
+  inputComment: {
+    width: "100%",
+    height: "100%",
+    backgroundColor: "#F6F6F6",
+    borderColor: "#BDBDBD",
+    borderRadius: 25,
+    paddingLeft: 16,
+    paddingRight: 50,
+    borderWidth: 1,
+  },
+  commentButton: {
+    position: "absolute",
+    top: 8,
+    right: 8,
+    width: 34,
+    height: 34,
+    borderRadius: 17,
+    backgroundColor: "#FF6C00",
+    alignItems: "center",
+    justifyContent: "center",
+  },
 });
