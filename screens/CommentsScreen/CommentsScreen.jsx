@@ -33,6 +33,8 @@ import Sea from "../../assets/images/sea.jpg";
 import AuthorAva from "../../assets/images/AuthorAva.jpg";
 import VisitorAva from "../../assets/images/VisitorAva.jpg";
 
+import CustomHeader from "../../components/CustomHeader/CustomHeader";
+
 const CommentsScreen = () => {
   const navigation = useNavigation();
   console.log(navigation.getState());
@@ -40,22 +42,8 @@ const CommentsScreen = () => {
   return (
     <View style={stylesCommentsScreen.container}>
       {/* верхнє меню */}
-      <View style={styles.screenHeader}>
-        <View style={styles.screenHeaderLeft}>
-          {/* тут кнопку треба переписати  */}
-          <Pressable
-            onPress={() =>
-              navigation.navigate("Home", { screen: "ProfileScreen" })
-            }
-          >
-            <AntDesign name="arrowleft" size={24} color="#BDBDBD" />
-          </Pressable>
-        </View>
-        <View style={styles.screenHeaderCenter}>
-          <Text style={styles.screenHeaderText}>Коментарі</Text>
-        </View>
-        <View style={styles.screenHeaderRight}></View>
-      </View>
+      <CustomHeader title="Коментарі" />
+
       {/* блок головного контенту */}
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <KeyboardAvoidingView

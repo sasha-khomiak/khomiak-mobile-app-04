@@ -16,22 +16,19 @@ import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { Octicons } from "@expo/vector-icons";
 
+import CustomHeader from "../../components/CustomHeader/CustomHeader";
+
 //Створення нижньої навігації
 const Tabs = createBottomTabNavigator();
 
 import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
+
 // головний компонент
-const Home = (props) => {
-  const routeName = getFocusedRouteNameFromRoute(props.route);
-  // const [screenNumber, setScreenNumber] = useState(0);
-
-  const navigation = useNavigation();
-  // let routeName = "CreatePostsScreen";
-
-  console.log("props", props);
-  // console.log("route", route);
-  // console.log("navigation", navigation);
+const Home = ({ route, navigation }) => {
+  //Дізнатися на якому роуті ми перебуваємо
+  const routeName = getFocusedRouteNameFromRoute(route) ?? "PostsScreen";
   console.log("routeName", routeName);
+
   return (
     //  отут нижня навігація
     <Tabs.Navigator
@@ -39,7 +36,7 @@ const Home = (props) => {
       screenOptions={({ route }) => {
         return {
           tabBarShowLabel: false,
-          headerShown: false,
+          // headerShown: false,
           tabBarStyle: {
             paddingBottom: 20,
             height: 83,
@@ -83,15 +80,39 @@ const Home = (props) => {
         };
       }}
     >
-      {routeName !== "CreatePostsScreen" && (
-        <Tabs.Screen name="PostsScreen" component={PostsScreen} />
-      )}
+      {/* {routeName !== "CreatePostsScreen" && ( */}
+      <Tabs.Screen
+        name="PostsScreen"
+        component={PostsScreen}
+        options={{
+          header: ({ navigation, route, options }) => {
+            // const title = route.name;
+            const title = "Пубілкації";
+            return <CustomHeader title={title} />;
+          },
+        }}
+      />
+      {/* )} */}
 
-      <Tabs.Screen name="CreatePostsScreen" component={CreatePostsScreen} />
+      <Tabs.Screen
+        name="CreatePostsScreen"
+        component={CreatePostsScreen}
+        options={{
+          header: ({ navigation, route, options }) => {
+            // const title = route.name;
+            const title = "Створити публікацію";
+            return <CustomHeader title={title} cameFrom="ProfileScreen" />;
+          },
+        }}
+      />
 
-      {routeName !== "CreatePostsScreen" && (
-        <Tabs.Screen name="ProfileScreen" component={ProfileScreen} />
-      )}
+      {/* {routeName !== "CreatePostsScreen" && ( */}
+      <Tabs.Screen
+        name="ProfileScreen"
+        component={ProfileScreen}
+        options={{ headerShown: false }}
+      />
+      {/* )} */}
     </Tabs.Navigator>
   );
 };

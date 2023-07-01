@@ -1,5 +1,5 @@
 // ДОПРАЦЮВАТИ КНОПКУ НАЗАД!!!!!!!!
-
+// Чому двічі консолиться
 // Компоненти
 import {
   Text,
@@ -28,18 +28,7 @@ const CreatePostsScreen = () => {
 
   return (
     <View style={stylesCreatePostsScreen.container}>
-      {/* верхнє меню */}
-      <View style={styles.screenHeader}>
-        <View style={styles.screenHeaderLeft}>
-          <Pressable onPress={() => navigation.navigate("Login")}>
-            <AntDesign name="arrowleft" size={24} color="#BDBDBD" />
-          </Pressable>
-        </View>
-        <View style={styles.screenHeaderCenter}>
-          <Text style={styles.screenHeaderText}>Створити публікацію</Text>
-        </View>
-        <View style={styles.screenHeaderRight}></View>
-      </View>
+      {/* верхнє меню вантажиться з компонента HOME із customHeader */}
       {/* блок головного контенту */}
 
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>

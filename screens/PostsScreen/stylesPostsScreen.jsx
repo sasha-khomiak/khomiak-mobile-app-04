@@ -6,16 +6,17 @@ export const stylesPostsScreen = StyleSheet.create({
     flex: 1,
   },
   screenMainContent: {
-    marginBottom: 0,
-    paddingLeft: 16,
-    paddingRight: 16,
     paddingTop: 32,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    paddingBottom: 24,
   },
 
   userBlock: {
     height: 60,
     flexDirection: "row",
     marginBottom: 16,
+    width: 343,
   },
 
   userBlockPhotoWrap: {

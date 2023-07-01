@@ -13,25 +13,16 @@ import { useNavigation } from "@react-navigation/native";
 
 import { Feather } from "@expo/vector-icons";
 
+import PictureCard from "../../components/PictureCard/PictureCard";
+import Forest from "../../assets/images/forest.jpg";
+
+import { stylesProfileScreen } from "../ProfileScreen/stylesProfileScreen";
 // Головний компонент PostsScreen
 const PostsScreen = () => {
   const navigation = useNavigation();
   return (
     <View style={stylesPostsScreen.container}>
-      {/* верхнє меню */}
-      <View style={styles.screenHeader}>
-        <View style={styles.screenHeaderLeft}></View>
-        <View style={styles.screenHeaderCenter}>
-          <Text style={styles.screenHeaderText}>Публікації</Text>
-        </View>
-        <View style={styles.screenHeaderRight}>
-          <Pressable onPress={() => navigation.navigate("Login")}>
-            <Feather name="log-out" size={24} color="#BDBDBD" />
-          </Pressable>
-        </View>
-      </View>
-      {/* блок головного контенту */}
-      <ScrollView style={stylesPostsScreen.screenMainContent}>
+      <ScrollView contentContainerStyle={stylesPostsScreen.screenMainContent}>
         <View style={stylesPostsScreen.userBlock}>
           <View style={stylesPostsScreen.userBlockPhotoWrap}>
             <Image source={RomanovaImg} />
@@ -43,6 +34,28 @@ const PostsScreen = () => {
             </Text>
           </View>
         </View>
+
+        <PictureCard
+          pictureSource={Forest}
+          title="Ліс"
+          comments="8"
+          likes="153"
+          location="Ukraine"
+        />
+        <PictureCard
+          pictureSource={Forest}
+          title="Ліс"
+          comments="8"
+          likes="153"
+          location="Ukraine"
+        />
+        <PictureCard
+          pictureSource={Forest}
+          title="Ліс"
+          comments="8"
+          likes="153"
+          location="Ukraine"
+        />
       </ScrollView>
     </View>
   );
