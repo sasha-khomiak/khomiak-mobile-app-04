@@ -15,16 +15,17 @@ export const stylesCommentsScreen = StyleSheet.create({
     marginTop: 32,
   },
   // блок інпута
-  inputContainer: {
-    flex: 1, // цікавий ефект заповзання тексту під інпут
-  },
+  // inputContainer: {
+  //   flex: 1, // цікавий ефект заповзання тексту під інпут
+  // },
   inputCommentWrap: {
     width: 343,
     height: 50,
     marginLeft: "auto",
     marginRight: "auto",
-    marginTop: "auto",
+    //   marginTop: "auto",
     marginBottom: 16,
+    marginTop: 5,
   },
   inputComment: {
     width: "100%",

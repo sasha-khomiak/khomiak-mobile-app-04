@@ -51,6 +51,11 @@ export const stylesCreatePostsScreen = StyleSheet.create({
     paddingVertical: 15,
     borderBottomColor: "#E8E8E8",
     borderBottomWidth: 1,
+    fontFamily: "Roboto-Regular",
+    fontStyle: "normal",
+    fontWeight: "400",
+    fontSize: 16,
+    color: "#BDBDBD",
   },
   inputPlaceWrap: {
     marginTop: 16,
@@ -63,6 +68,11 @@ export const stylesCreatePostsScreen = StyleSheet.create({
     paddingTop: 15,
     paddingBottom: 15,
     paddingLeft: 28,
+    fontFamily: "Roboto-Regular",
+    fontStyle: "normal",
+    fontWeight: "400",
+    fontSize: 16,
+    color: "#BDBDBD",
   },
   inputPlaceIco: {
     position: "absolute",

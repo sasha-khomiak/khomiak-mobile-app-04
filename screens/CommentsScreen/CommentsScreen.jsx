@@ -44,52 +44,52 @@ const CommentsScreen = () => {
       {/* верхнє меню */}
       <CustomHeader title="Коментарі" />
 
-      {/* блок головного контенту */}
-      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-        <KeyboardAvoidingView
-          behavior={Platform.OS === "ios" ? "padding" : "height"}
-          style={stylesCommentsScreen.inputContainer}
-        >
-          <ScrollView style={styles.screenMainContent}>
-            <View style={stylesCommentsScreen.imageWrap}>
-              <Image source={Sea} />
-            </View>
-            <VisitorComment
-              ico={VisitorAva}
-              text="Really love your most recent photo. I’ve been trying to capture the same thing for a few months and would love some tips!"
-              time="09 червня, 2020 | 08:40"
-            />
-            <AuthorComment
-              ico={AuthorAva}
-              text="A fast 50mm like f1.8 would help with the bokeh. I’ve been using primes as they tend to get a bit sharper images."
-              time="09 червня, 2020 | 09:14"
-            />
+      {/* блок головного контенту початок */}
+      {/* <TouchableWithoutFeedback onPress={Keyboard.dismiss}> */}
+      <ScrollView style={styles.screenMainContent}>
+        <View style={stylesCommentsScreen.imageWrap}>
+          <Image source={Sea} />
+        </View>
 
-            <VisitorComment
-              ico={VisitorAva}
-              text="Thank you! That was very helpful!"
-              time="09 червня, 2020 | 09:20"
-            />
-            <AuthorComment
-              ico={AuthorAva}
-              text="A fast 50mm like f1.8 would help with the bokeh. I’ve been using primes as they tend to get a bit sharper images."
-              time="09 червня, 2020 | 09:14"
-            />
-          </ScrollView>
-          {/* блок інпута комента */}
+        <VisitorComment
+          ico={VisitorAva}
+          text="Really love your most recent photo. I’ve been trying to capture the same thing for a few months and would love some tips!"
+          time="09 червня, 2020 | 08:40"
+        />
+        <AuthorComment
+          ico={AuthorAva}
+          text="A fast 50mm like f1.8 would help with the bokeh. I’ve been using primes as they tend to get a bit sharper images."
+          time="09 червня, 2020 | 09:14"
+        />
 
-          <View style={stylesCommentsScreen.inputCommentWrap}>
-            <TextInput
-              placeholder="Коментувати..."
-              name="comment"
-              style={stylesCommentsScreen.inputComment}
-            />
-            <Pressable style={stylesCommentsScreen.commentButton}>
-              <AntDesign name="arrowup" size={24} color="white" />
-            </Pressable>
-          </View>
-        </KeyboardAvoidingView>
-      </TouchableWithoutFeedback>
+        <VisitorComment
+          ico={VisitorAva}
+          text="Thank you! That was very helpful!"
+          time="09 червня, 2020 | 09:20"
+        />
+        <AuthorComment
+          ico={AuthorAva}
+          text="A fast 50mm like f1.8 would help with the bokeh. I’ve been using primes as they tend to get a bit sharper images."
+          time="09 червня, 2020 | 09:14"
+        />
+      </ScrollView>
+      {/* </TouchableWithoutFeedback> */}
+
+      <KeyboardAvoidingView // визначаємо ОС та налаштовуємо поведінку клавіатури
+        behavior={Platform.OS == "ios" ? "padding" : "height"}
+      >
+        <View style={stylesCommentsScreen.inputCommentWrap}>
+          <TextInput
+            placeholder="Коментувати..."
+            name="comment"
+            style={stylesCommentsScreen.inputComment}
+          />
+          <Pressable style={stylesCommentsScreen.commentButton}>
+            <AntDesign name="arrowup" size={24} color="white" />
+          </Pressable>
+        </View>
+      </KeyboardAvoidingView>
+      {/* блок головного контенту кінець */}
     </View>
   );
 };

@@ -1,30 +1,32 @@
-import React, { useState } from "react";
-import { View, Text, AppState } from "react-native";
-import { useNavigation, useRoute } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Feather } from "@expo/vector-icons";
-import { useIsFocused } from "@react-navigation/native";
+// Імпорт компонентів
+import { View } from "react-native";
 
-// Імпорт стилів
-import { styles } from "../styles";
-
+// Імпорт скрінів
 import PostsScreen from "../PostsScreen/PostsScreen";
 import ProfileScreen from "../ProfileScreen/ProfileScreen";
 import CreatePostsScreen from "../CreatePostsScreen/CreatePostsScreen";
 
+// Імпорт іконок
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { Octicons } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 
+// Імпорт кастомного хедера
 import CustomHeader from "../../components/CustomHeader/CustomHeader";
+
+// Імпорт маршрутизації
+import { useNavigation, useRoute } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
 
 //Створення нижньої навігації
 const Tabs = createBottomTabNavigator();
 
-import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
-
 // головний компонент
 const Home = ({ route, navigation }) => {
+  // const route = useRoute();
+  // const navigation = useNavigation();
   //Дізнатися на якому роуті ми перебуваємо
   const routeName = getFocusedRouteNameFromRoute(route) ?? "PostsScreen";
   console.log("routeName", routeName);
