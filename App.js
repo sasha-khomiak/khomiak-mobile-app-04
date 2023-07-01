@@ -35,36 +35,17 @@ export default function App() {
     // Наш головний контейнер - тобто весь екран в навігаційній обгортці
 
     <NavigationContainer>
-      <MainStack.Navigator initialRouteName="Login">
+      <MainStack.Navigator
+        initialRouteName="Login"
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
         {/* Аналог Routes */}
-        <MainStack.Screen
-          name="Registration"
-          component={RegistrationScreen}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <MainStack.Screen
-          name="Login"
-          component={LoginScreen}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <MainStack.Screen
-          name="Home"
-          component={Home}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <MainStack.Screen
-          name="Comments"
-          component={CommentsScreen}
-          options={{
-            headerShown: false,
-          }}
-        />
+        <MainStack.Screen name="Registration" component={RegistrationScreen} />
+        <MainStack.Screen name="Login" component={LoginScreen} />
+        <MainStack.Screen name="Home" component={Home} />
+        <MainStack.Screen name="Comments" component={CommentsScreen} />
       </MainStack.Navigator>
     </NavigationContainer>
   );

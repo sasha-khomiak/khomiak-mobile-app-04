@@ -1,3 +1,4 @@
+// Імпорт компонентів
 import {
   Text,
   View,
@@ -5,11 +6,11 @@ import {
   ScrollView,
   Image,
   Pressable,
-  SafeAreaView,
 } from "react-native";
 
 // Імпорт стилів
 import { styles } from "../styles";
+import { stylesProfileScreen } from "./stylesProfileScreen";
 
 // Імпорт навігації
 import { useNavigation } from "@react-navigation/native";
@@ -17,7 +18,6 @@ import { useNavigation } from "@react-navigation/native";
 // Імпорт бібліотек іконок
 import { AntDesign } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 // Імпорт фотографії бекграунду, фото аватару і фото
 import PhotoBG from "../../assets/images/PhotoBG.jpg";
@@ -26,42 +26,45 @@ import Forest from "../../assets/images/forest.jpg";
 import Sea from "../../assets/images/sea.jpg";
 import House from "../../assets/images/house.jpg";
 
-import PictureCard from "../../components/PictureCard";
+// Імпорт компоненту картинки
+import PictureCard from "../../components/PictureCard/PictureCard";
 
 const ProfileScreen = () => {
   //---------СТВОРЕННЯ НАВІГАЦІЇ---------//
   const navigation = useNavigation();
 
   return (
-    <View style={styles.container}>
+    <View style={stylesProfileScreen.container}>
       <ImageBackground
         source={PhotoBG}
         resizeMode="cover"
-        style={styles.bgimage}
+        style={stylesProfileScreen.bgimage}
       >
-        <ScrollView contentContainerStyle={styles.profileAreaBlock}>
+        <ScrollView
+          contentContainerStyle={stylesProfileScreen.profileAreaBlock}
+        >
           {/* Наша аватарка в обгортці і хрестик */}
           <View>
-            <View style={styles.avatarContainer}>
-              <View style={styles.avatarPhotoWrap}>
+            <View style={stylesProfileScreen.avatarContainer}>
+              <View style={stylesProfileScreen.avatarPhotoWrap}>
                 <Image source={Avatar} />
               </View>
               <AntDesign
                 name="closecircleo"
                 size={25}
                 color="#BDBDBD"
-                style={styles.addIco}
+                style={stylesProfileScreen.removeIco}
               />
             </View>
           </View>
 
           <Pressable
-            style={styles.logOutButton}
+            style={stylesProfileScreen.logOutButton}
             onPress={() => navigation.navigate("Login")}
           >
             <Feather name="log-out" size={24} color="#BDBDBD" />
           </Pressable>
-          <Text style={styles.profileName}>Natali Romanova</Text>
+          <Text style={stylesProfileScreen.profileName}>Natali Romanova</Text>
 
           <PictureCard
             pictureSource={Forest}

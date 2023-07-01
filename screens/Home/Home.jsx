@@ -19,24 +19,23 @@ import { Octicons } from "@expo/vector-icons";
 //Створення нижньої навігації
 const Tabs = createBottomTabNavigator();
 
+import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
 // головний компонент
-const Home = () => {
-  const [screenNumber, setScreenNumber] = useState(0);
+const Home = (props) => {
+  const routeName = getFocusedRouteNameFromRoute(props.route);
+  // const [screenNumber, setScreenNumber] = useState(0);
 
   const navigation = useNavigation();
-  console.log(navigation.getState());
+  // let routeName = "CreatePostsScreen";
 
-  let actualTab = 0;
-  if (navigation.getState().routes[1].state !== undefined) {
-    actualTab = navigation.getState().routes[1].state.index;
-    // setScreenNumber(actualTab);
-    // setScreenNumber(actualTab);
-  }
-
-  console.log(actualTab);
+  console.log("props", props);
+  // console.log("route", route);
+  // console.log("navigation", navigation);
+  console.log("routeName", routeName);
   return (
     //  отут нижня навігація
     <Tabs.Navigator
+      initialRouteName="PostsScreen"
       screenOptions={({ route }) => {
         return {
           tabBarShowLabel: false,
@@ -84,9 +83,15 @@ const Home = () => {
         };
       }}
     >
-      <Tabs.Screen name="PostsScreen" component={PostsScreen} />
+      {routeName !== "CreatePostsScreen" && (
+        <Tabs.Screen name="PostsScreen" component={PostsScreen} />
+      )}
+
       <Tabs.Screen name="CreatePostsScreen" component={CreatePostsScreen} />
-      <Tabs.Screen name="ProfileScreen" component={ProfileScreen} />
+
+      {routeName !== "CreatePostsScreen" && (
+        <Tabs.Screen name="ProfileScreen" component={ProfileScreen} />
+      )}
     </Tabs.Navigator>
   );
 };

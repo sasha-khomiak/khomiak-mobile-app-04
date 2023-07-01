@@ -3,6 +3,8 @@ import { View, Text, Image, Pressable } from "react-native";
 
 // Імпорт стилів
 import { styles } from "../styles";
+import { stylesPostsScreen } from "./stylesPostsScreen";
+
 import { ScrollView } from "react-native-gesture-handler";
 
 import RomanovaImg from "../../assets/images/romanova.jpg";
@@ -15,7 +17,7 @@ import { Feather } from "@expo/vector-icons";
 const PostsScreen = () => {
   const navigation = useNavigation();
   return (
-    <View style={styles.container}>
+    <View style={stylesPostsScreen.container}>
       {/* верхнє меню */}
       <View style={styles.screenHeader}>
         <View style={styles.screenHeaderLeft}></View>
@@ -29,14 +31,16 @@ const PostsScreen = () => {
         </View>
       </View>
       {/* блок головного контенту */}
-      <ScrollView style={styles.screenMainContent}>
-        <View style={styles.userBlock}>
-          <View style={styles.userBlockPhotoWrap}>
+      <ScrollView style={stylesPostsScreen.screenMainContent}>
+        <View style={stylesPostsScreen.userBlock}>
+          <View style={stylesPostsScreen.userBlockPhotoWrap}>
             <Image source={RomanovaImg} />
           </View>
-          <View style={styles.userBlockInfo}>
-            <Text style={styles.userBlockName}>Natali Romanova</Text>
-            <Text style={styles.userBlockEmail}>email@example.com</Text>
+          <View style={stylesPostsScreen.userBlockInfo}>
+            <Text style={stylesPostsScreen.userBlockName}>Natali Romanova</Text>
+            <Text style={stylesPostsScreen.userBlockEmail}>
+              email@example.com
+            </Text>
           </View>
         </View>
       </ScrollView>

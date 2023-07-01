@@ -3,10 +3,8 @@ import React, { useState } from "react";
 
 // Імпорт ReactNative компонентів
 import {
-  StatusBar,
   TouchableWithoutFeedback,
   KeyboardAvoidingView,
-  StyleSheet,
   Text,
   View,
   ImageBackground,
@@ -14,11 +12,10 @@ import {
   TextInput,
   Pressable,
   Keyboard,
-  Alert,
-  Image,
   Platform,
 } from "react-native";
 
+// підключення хука навігації
 import { useNavigation } from "@react-navigation/native";
 
 // Імпорт фотографії бекграунду
@@ -28,7 +25,8 @@ import PhotoBG from "../../assets/images/PhotoBG.jpg";
 import { AntDesign } from "@expo/vector-icons";
 
 // Імпорт стилів
-import { styles } from "../styles";
+import { styles } from "../styles"; //тільки стиль екрана і бекграунда
+import { stylesProfileScreen } from "./stylesRegistrationScreen";
 
 // Компонент RegistrationScreen
 const RegistrationScreen = () => {
@@ -68,44 +66,47 @@ const RegistrationScreen = () => {
 
   //---------РОЗМІТКА КОМПОНЕНТА---------//
   return (
-    <View style={styles.container}>
+    <View style={stylesProfileScreen.container}>
       {/* Компонент ImageBackground, для підложки, а вміст верстаємо в ньому */}
       <ImageBackground
         source={PhotoBG}
         resizeMode="cover"
-        style={styles.bgimage}
+        style={stylesProfileScreen.bgimage}
       >
-        {/* статус-бар */}
-        <StatusBar style="auto" />
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <KeyboardAvoidingView
             behavior={Platform.OS === "ios" ? "padding" : "height"}
-            style={styles.container}
+            style={stylesProfileScreen.container}
           >
             {/* Наша форма біла */}
-            <ScrollView contentContainerStyle={styles.formAreaBlock}>
+            <ScrollView
+              contentContainerStyle={stylesProfileScreen.formAreaBlock}
+            >
               {/* Наша аватарка в обгортці і плюсик */}
               <View>
-                <View style={styles.avatarContainer}>
-                  <View style={styles.avatarPhotoWrap}></View>
+                <View style={stylesProfileScreen.avatarContainer}>
+                  <View style={stylesProfileScreen.avatarPhotoWrap}></View>
                   <AntDesign
                     name="pluscircleo"
                     size={25}
                     color="#FF6C00"
-                    style={styles.addIco}
+                    style={stylesProfileScreen.addIco}
                   />
                 </View>
               </View>
 
               {/* Наш заголовок */}
-              <Text style={styles.title}>Реєстрація</Text>
+              <Text style={stylesProfileScreen.title}>Реєстрація</Text>
               {/* Наш інпут login*/}
-              <View style={styles.inputWrap}>
+              <View style={stylesProfileScreen.inputWrap}>
                 <TextInput
                   style={
                     focusLoginInput
-                      ? [styles.input, styles.focusedInput]
-                      : styles.input
+                      ? [
+                          stylesProfileScreen.input,
+                          stylesProfileScreen.focusedInput,
+                        ]
+                      : stylesProfileScreen.input
                   }
                   placeholder="Логін"
                   placeholderTextColor="#BDBDBD"
@@ -116,12 +117,15 @@ const RegistrationScreen = () => {
                 />
               </View>
               {/* Наш інпут email*/}
-              <View style={styles.inputWrap}>
+              <View style={stylesProfileScreen.inputWrap}>
                 <TextInput
                   style={
                     focusEmailInput
-                      ? [styles.input, styles.focusedInput]
-                      : styles.input
+                      ? [
+                          stylesProfileScreen.input,
+                          stylesProfileScreen.focusedInput,
+                        ]
+                      : stylesProfileScreen.input
                   }
                   placeholder="Адреса електронної пошти"
                   value={email}
@@ -131,12 +135,15 @@ const RegistrationScreen = () => {
                 />
               </View>
               {/* Наш інпут password*/}
-              <View style={styles.inputWrap}>
+              <View style={stylesProfileScreen.inputWrap}>
                 <TextInput
                   style={
                     focusPasswordInput
-                      ? [styles.input, styles.focusedInput]
-                      : styles.input
+                      ? [
+                          stylesProfileScreen.input,
+                          stylesProfileScreen.focusedInput,
+                        ]
+                      : stylesProfileScreen.input
                   }
                   placeholder="Пароль"
                   name="password"
@@ -147,24 +154,31 @@ const RegistrationScreen = () => {
                   onBlur={() => setFocusPasswordInput(false)}
                 />
                 <Pressable
-                  style={styles.pressableShowPassword}
+                  style={stylesProfileScreen.pressableShowPassword}
                   onPress={togglePassword}
                 >
-                  <Text style={styles.showPassword}>
+                  <Text style={stylesProfileScreen.showPassword}>
                     {hidePassword ? "Показати" : "Сховати"}
                   </Text>
                 </Pressable>
               </View>
               {/* Наша кнопка зареєструватися*/}
-              <Pressable style={styles.button} onPress={registration}>
-                <Text style={styles.buttonText}>Зареєcтруватися</Text>
+              <Pressable
+                style={stylesProfileScreen.button}
+                onPress={registration}
+              >
+                <Text style={stylesProfileScreen.buttonText}>
+                  Зареєcтруватися
+                </Text>
               </Pressable>
               {/* Наша кнопка вже є акаунт*/}
               <Pressable
-                style={styles.linkTextWrap}
+                style={stylesProfileScreen.linkTextWrap}
                 onPress={() => navigation.navigate("Login")}
               >
-                <Text style={styles.linkText}>Вже є акаунт? Увійти</Text>
+                <Text style={stylesProfileScreen.linkText}>
+                  Вже є акаунт? Увійти
+                </Text>
               </Pressable>
             </ScrollView>
           </KeyboardAvoidingView>

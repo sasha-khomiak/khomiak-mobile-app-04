@@ -1,11 +1,11 @@
 // підключення хука useState
 import React, { useState } from "react";
 
+// підключення компонентів
 import {
   TouchableWithoutFeedback,
   KeyboardAvoidingView,
   Keyboard,
-  StatusBar,
   Text,
   ImageBackground,
   View,
@@ -16,6 +16,7 @@ import {
   ScrollView,
 } from "react-native";
 
+// підключення хука навігації
 import { useNavigation } from "@react-navigation/native";
 
 // Імпорт фотографії бекграунду і іконки плюсика
@@ -23,6 +24,7 @@ import PhotoBG from "../../assets/images/PhotoBG.jpg";
 
 // Імпорт стилів
 import { styles } from "../styles";
+import { stylesLoginScreen } from "./stylesLoginScreen";
 
 const LoginScreen = () => {
   //---------СТВОРЕННЯ НАВІГАЦІЇ---------//
@@ -55,32 +57,33 @@ const LoginScreen = () => {
 
   //---------РОЗМІТКА КОМПОНЕНТА---------//
   return (
-    <View style={styles.container}>
+    <View style={stylesLoginScreen.container}>
       {/* Компонент ImageBackground, для підложки, а вміст верстаємо в ньому */}
       <ImageBackground
         source={PhotoBG}
         resizeMode="cover"
-        style={styles.bgimage}
+        style={stylesLoginScreen.bgimage}
       >
-        {/* статус-бар */}
-        <StatusBar style="auto" />
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <KeyboardAvoidingView
             behavior={Platform.OS === "ios" ? "padding" : "height"}
-            style={styles.container}
+            style={stylesLoginScreen.container}
           >
             {/* Наша форма біла */}
-            <ScrollView contentContainerStyle={styles.authAreaBlock}>
+            <ScrollView contentContainerStyle={stylesLoginScreen.authAreaBlock}>
               {/* Наш заголовок */}
-              <Text style={styles.title}>Увійти</Text>
+              <Text style={stylesLoginScreen.title}>Увійти</Text>
 
               {/* Наш інпут email*/}
-              <View style={styles.inputWrap}>
+              <View style={stylesLoginScreen.inputWrap}>
                 <TextInput
                   style={
                     focusEmailInput
-                      ? [styles.input, styles.focusedInput]
-                      : styles.input
+                      ? [
+                          stylesLoginScreen.input,
+                          stylesLoginScreen.focusedInput,
+                        ]
+                      : stylesLoginScreen.input
                   }
                   placeholder="Адреса електронної пошти"
                   value={email}
@@ -91,12 +94,15 @@ const LoginScreen = () => {
               </View>
 
               {/* Наш інпут password*/}
-              <View style={styles.inputWrap}>
+              <View style={stylesLoginScreen.inputWrap}>
                 <TextInput
                   style={
                     focusPasswordInput
-                      ? [styles.input, styles.focusedInput]
-                      : styles.input
+                      ? [
+                          stylesLoginScreen.input,
+                          stylesLoginScreen.focusedInput,
+                        ]
+                      : stylesLoginScreen.input
                   }
                   placeholder="Пароль"
                   name="password"
@@ -107,28 +113,30 @@ const LoginScreen = () => {
                   secureTextEntry={hidePassword}
                 />
                 <Pressable
-                  style={styles.pressableShowPassword}
+                  style={stylesLoginScreen.pressableShowPassword}
                   onPress={togglePassword}
                 >
-                  <Text style={styles.showPassword}>
+                  <Text style={stylesLoginScreen.showPassword}>
                     {hidePassword ? "Показати" : "Сховати"}
                   </Text>
                 </Pressable>
               </View>
 
               {/* Наша кнопка увійти*/}
-              <Pressable style={styles.button} onPress={login}>
-                <Text style={styles.buttonText}>Увійти</Text>
+              <Pressable style={stylesLoginScreen.button} onPress={login}>
+                <Text style={stylesLoginScreen.buttonText}>Увійти</Text>
               </Pressable>
 
               {/* Наша кнопка немає акаунта, Зареєструватися*/}
               <Pressable
-                style={styles.linkTextWrap}
+                style={stylesLoginScreen.linkTextWrap}
                 onPress={() => navigation.navigate("Registration")}
               >
-                <Text style={styles.linkText}>
+                <Text style={stylesLoginScreen.linkText}>
                   Немає акаунту?&nbsp;
-                  <Text style={styles.underline}>Зареєструватися</Text>
+                  <Text style={stylesLoginScreen.underline}>
+                    Зареєструватися
+                  </Text>
                 </Text>
               </Pressable>
             </ScrollView>
