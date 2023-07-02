@@ -82,39 +82,37 @@ const Home = ({ route, navigation }) => {
         };
       }}
     >
-      {/* {routeName !== "CreatePostsScreen" && ( */}
       <Tabs.Screen
         name="PostsScreen"
         component={PostsScreen}
         options={{
           header: ({ navigation, route, options }) => {
             // const title = route.name;
+            // console.log("options", options);
             const title = "Пубілкації";
             return <CustomHeader title={title} />;
           },
+          //
         }}
       />
-      {/* )} */}
 
       <Tabs.Screen
         name="CreatePostsScreen"
         component={CreatePostsScreen}
         options={{
           header: ({ navigation, route, options }) => {
-            // const title = route.name;
             const title = "Створити публікацію";
-            return <CustomHeader title={title} cameFrom="ProfileScreen" />;
+            return <CustomHeader title={title} cameFrom={routeName} />;
           },
+          tabBarStyle: { display: "none" },
         }}
       />
 
-      {/* {routeName !== "CreatePostsScreen" && ( */}
       <Tabs.Screen
         name="ProfileScreen"
         component={ProfileScreen}
         options={{ headerShown: false }}
       />
-      {/* )} */}
     </Tabs.Navigator>
   );
 };

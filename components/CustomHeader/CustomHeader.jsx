@@ -15,11 +15,7 @@ const CustomHeader = ({ title, cameFrom }) => {
     <View style={stylesCustomHeader.screenHeader}>
       <View style={stylesCustomHeader.screenHeaderLeft}>
         {(title === "Створити публікацію" || title === "Коментарі") && (
-          <Pressable
-            onPress={() =>
-              navigation.navigate("Home", { screen: "ProfileScreen" })
-            }
-          >
+          <Pressable onPress={() => navigation.goBack({ screen: cameFrom })}>
             <AntDesign name="arrowleft" size={24} color="#BDBDBD" />
           </Pressable>
         )}

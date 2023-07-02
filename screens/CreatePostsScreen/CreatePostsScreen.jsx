@@ -31,45 +31,57 @@ const CreatePostsScreen = () => {
       {/* верхнє меню вантажиться з компонента HOME із customHeader */}
       {/* блок головного контенту */}
 
-      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-        <KeyboardAvoidingView
-          behavior={Platform.OS === "ios" ? "padding" : "height"}
-          style={styles.container}
-        >
-          <ScrollView style={stylesCreatePostsScreen.mainContent}>
-            <View style={stylesCreatePostsScreen.photoWrap}>
-              <Pressable style={stylesCreatePostsScreen.buttonLoadPhoto}>
-                <FontAwesome name="camera" size={24} color="#BDBDBD" />
-              </Pressable>
-            </View>
-            <Text style={stylesCreatePostsScreen.operationPhotoText}>
-              Завантажте фото
-            </Text>
-            <TextInput
-              placeholder="Назва..."
-              style={stylesCreatePostsScreen.inputName}
-            ></TextInput>
-            <View style={stylesCreatePostsScreen.inputPlaceWrap}>
-              <TextInput
-                placeholder="Місцевість..."
-                style={stylesCreatePostsScreen.inputPlace}
-              />
+      <ScrollView style={stylesCreatePostsScreen.mainContent}>
+        <View style={stylesCreatePostsScreen.photoWrap}>
+          <Pressable style={stylesCreatePostsScreen.buttonLoadPhoto}>
+            <FontAwesome name="camera" size={24} color="#BDBDBD" />
+          </Pressable>
+        </View>
+        <Text style={stylesCreatePostsScreen.operationPhotoText}>
+          Завантажте фото
+        </Text>
 
-              <AntDesign
-                name="enviromento"
-                size={24}
-                color="#BDBDBD"
-                style={stylesCreatePostsScreen.inputPlaceIco}
-              />
-            </View>
-            <Pressable style={stylesCreatePostsScreen.postButton}>
-              <Text style={stylesCreatePostsScreen.postButtonText}>
-                Опубліковати
-              </Text>
-            </Pressable>
-          </ScrollView>
-        </KeyboardAvoidingView>
-      </TouchableWithoutFeedback>
+        <TextInput
+          placeholder="Назва..."
+          style={stylesCreatePostsScreen.inputName}
+        ></TextInput>
+
+        <View style={stylesCreatePostsScreen.inputPlaceWrap}>
+          <TextInput
+            placeholder="Місцевість..."
+            style={stylesCreatePostsScreen.inputPlace}
+          />
+
+          <AntDesign
+            name="enviromento"
+            size={24}
+            color="#BDBDBD"
+            style={stylesCreatePostsScreen.inputPlaceIco}
+          />
+        </View>
+
+        <Pressable style={stylesCreatePostsScreen.postButton}>
+          <Text style={stylesCreatePostsScreen.postButtonText}>
+            Опубліковати
+          </Text>
+        </Pressable>
+      </ScrollView>
+      {/* </KeyboardAvoidingView> */}
+      {/* </TouchableWithoutFeedback> */}
+
+      <View
+        style={{
+          width: 343,
+          height: 50,
+          marginLeft: "auto",
+          marginRight: "auto",
+          //   marginTop: "auto",
+          marginBottom: 16,
+          marginTop: 5,
+        }}
+      >
+        <Text>123</Text>
+      </View>
     </View>
   );
 };

@@ -10,7 +10,7 @@ export const stylesCreatePostsScreen = StyleSheet.create({
     paddingTop: 32,
     paddingLeft: 16,
     paddingRight: 16,
-    height: "100%",
+    height: "auto",
   },
   photoWrap: {
     width: "100%",
