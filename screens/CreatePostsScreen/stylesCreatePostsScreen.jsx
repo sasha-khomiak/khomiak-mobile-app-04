@@ -11,6 +11,7 @@ export const stylesCreatePostsScreen = StyleSheet.create({
     paddingLeft: 16,
     paddingRight: 16,
     height: "auto",
+    height: "100%",
   },
   photoWrap: {
     width: "100%",
@@ -97,5 +98,17 @@ export const stylesCreatePostsScreen = StyleSheet.create({
     fontWeight: "500",
     fontSize: 16,
     color: "#BDBDBD",
+  },
+  postButtonTrash: {
+    marginLeft: "auto",
+    marginRight: "auto",
+    width: 70,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: "#F6F6F6",
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 34,
+    marginTop: "auto",
   },
 });

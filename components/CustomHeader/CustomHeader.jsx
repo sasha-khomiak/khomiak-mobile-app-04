@@ -8,14 +8,14 @@ import { AntDesign } from "@expo/vector-icons";
 
 import { useNavigation } from "@react-navigation/native";
 
-const CustomHeader = ({ title, cameFrom }) => {
+const CustomHeader = ({ title }) => {
   const navigation = useNavigation();
 
   return (
     <View style={stylesCustomHeader.screenHeader}>
       <View style={stylesCustomHeader.screenHeaderLeft}>
         {(title === "Створити публікацію" || title === "Коментарі") && (
-          <Pressable onPress={() => navigation.goBack({ screen: cameFrom })}>
+          <Pressable onPress={() => navigation.goBack()}>
             <AntDesign name="arrowleft" size={24} color="#BDBDBD" />
           </Pressable>
         )}

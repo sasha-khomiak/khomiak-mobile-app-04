@@ -7,7 +7,8 @@ import {
   Pressable,
   ScrollView,
   TouchableWithoutFeedback,
-  KeyboardAvoidingView,
+  KeyboardAvoidingView, // новий імпорт
+  Platform, // новий імпорт
   Keyboard,
   Image,
   TextInput,
@@ -45,7 +46,7 @@ const CommentsScreen = () => {
       <CustomHeader title="Коментарі" />
 
       {/* блок головного контенту початок */}
-      {/* <TouchableWithoutFeedback onPress={Keyboard.dismiss}> */}
+
       <ScrollView style={styles.screenMainContent}>
         <View style={stylesCommentsScreen.imageWrap}>
           <Image source={Sea} />
@@ -73,7 +74,6 @@ const CommentsScreen = () => {
           time="09 червня, 2020 | 09:14"
         />
       </ScrollView>
-      {/* </TouchableWithoutFeedback> */}
 
       <KeyboardAvoidingView // визначаємо ОС та налаштовуємо поведінку клавіатури
         behavior={Platform.OS == "ios" ? "padding" : "height"}
